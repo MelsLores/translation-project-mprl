@@ -1,0 +1,491 @@
+/* ===================================
+   Animation Definitions
+   =================================== */
+
+/* ===================================
+   Keyframe Animations
+   =================================== */
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Bounce Animation */
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+/* Tech Cloud Float Animation */
+@keyframes techFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+  66% {
+    transform: translateY(-5px) rotate(-1deg);
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fade In Left */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Fade In Right */
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Scale In Animation */
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Slide Up Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Rotate Animation */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Text Glow Animation */
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(37, 99, 235, 0.8), 0 0 30px rgba(37, 99, 235, 0.6);
+  }
+}
+
+/* Shake Animation */
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-5px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(5px);
+  }
+}
+
+/* ===================================
+   Intersection Observer Animations
+   =================================== */
+
+/* Elements that will be animated on scroll */
+.animate-on-scroll {
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.animate-on-scroll.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.animate-fade-in-left {
+  animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.animate-fade-in-right {
+  animation: fadeInRight 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.animate-slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+}
+
+.animate-on-scroll.animate-scale-in {
+  animation: scaleIn 0.8s ease-out forwards;
+}
+
+/* ===================================
+   Component-Specific Animations
+   =================================== */
+
+/* Navigation Animation */
+.navbar {
+  transform: translateY(-100%);
+  transition: transform 0.3s ease-out;
+}
+
+.navbar.nav-visible {
+  transform: translateY(0);
+}
+
+/* Hero Section Animations */
+.hero-title {
+  animation: fadeInLeft 1s ease-out 0.2s both;
+}
+
+.hero-subtitle {
+  animation: fadeInLeft 1s ease-out 0.4s both;
+}
+
+.hero-description {
+  animation: fadeInLeft 1s ease-out 0.6s both;
+}
+
+.hero-buttons {
+  animation: fadeInLeft 1s ease-out 0.8s both;
+}
+
+.hero-visual {
+  animation: fadeInRight 1s ease-out 0.4s both;
+}
+
+.hero-scroll {
+  animation: fadeIn 1s ease-out 1s both;
+}
+
+/* Button Hover Animations */
+.btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+/* Project Card Animations */
+.project-card {
+  transition: all 0.3s ease-out;
+}
+
+.project-card:hover .project-placeholder {
+  transform: scale(1.1);
+  color: var(--primary-color);
+}
+
+.project-card:hover .tech-tag {
+  transform: translateY(-2px);
+  transition: transform 0.2s ease-out;
+}
+
+.project-card .tech-tag {
+  transition: transform 0.2s ease-out;
+}
+
+.project-card .tech-tag:nth-child(1) { transition-delay: 0s; }
+.project-card .tech-tag:nth-child(2) { transition-delay: 0.1s; }
+.project-card .tech-tag:nth-child(3) { transition-delay: 0.2s; }
+
+/* Skill Level Animation */
+.skill-level::after {
+  animation: skillLoad 2s ease-out 0.5s both;
+}
+
+@keyframes skillLoad {
+  from {
+    width: 0;
+  }
+}
+
+/* Contact Form Animations */
+.form-group input,
+.form-group textarea {
+  transition: all 0.3s ease-out;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  transform: scale(1.02);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+/* Social Links Animation */
+.social-link {
+  transition: all 0.3s ease-out;
+}
+
+.social-link:hover {
+  animation: pulse 0.6s ease-out;
+}
+
+/* Theme Toggle Animation */
+.theme-toggle {
+  transition: all 0.3s ease-out;
+}
+
+.theme-toggle:hover {
+  animation: rotate 0.5s ease-out;
+}
+
+/* Language Dropdown Animation */
+.lang-dropdown {
+  transform-origin: top right;
+}
+
+.lang-dropdown.active {
+  animation: scaleIn 0.2s ease-out;
+}
+
+/* ===================================
+   Loading Animations
+   =================================== */
+
+/* Page Load Animation */
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out;
+}
+
+.page-loader.fade-out {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--bg-tertiary);
+  border-top: 3px solid var(--primary-color);
+  border-radius: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+/* ===================================
+   Micro-Interactions
+   =================================== */
+
+/* Link Hover Effects */
+.nav-link,
+.project-link,
+.social-link {
+  position: relative;
+  transition: all 0.3s ease-out;
+}
+
+/* Magnetic Effect for Buttons */
+.btn-magnetic {
+  transition: transform 0.1s ease-out;
+}
+
+/* Text Selection Animation */
+::selection {
+  background: var(--primary-color);
+  color: var(--text-inverse);
+}
+
+::-moz-selection {
+  background: var(--primary-color);
+  color: var(--text-inverse);
+}
+
+/* Scroll Progress Indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: var(--gradient-primary);
+  z-index: var(--z-fixed);
+  transition: width 0.1s ease-out;
+}
+
+/* ===================================
+   Stagger Animations
+   =================================== */
+
+/* Stagger animation for grid items */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease-out;
+}
+
+.stagger-item.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-item:nth-child(1) { transition-delay: 0.1s; }
+.stagger-item:nth-child(2) { transition-delay: 0.2s; }
+.stagger-item:nth-child(3) { transition-delay: 0.3s; }
+.stagger-item:nth-child(4) { transition-delay: 0.4s; }
+.stagger-item:nth-child(5) { transition-delay: 0.5s; }
+.stagger-item:nth-child(6) { transition-delay: 0.6s; }
+
+/* ===================================
+   Performance Optimizations
+   =================================== */
+
+/* Hardware acceleration for animations */
+.animate-on-scroll,
+.btn,
+.project-card,
+.skill-category,
+.contact-item,
+.hero-visual,
+.tech-item {
+  backface-visibility: hidden;
+  perspective: 1000px;
+  transform: translateZ(0);
+}
+
+/* Reduce animations on low-end devices */
+@media (max-width: 767px) {
+  .tech-item {
+    animation: none;
+  }
+  
+  .hero-visual {
+    animation-duration: 0.5s;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+}
+
+/* ===================================
+   Dark Mode Transitions
+   =================================== */
+[data-theme="dark"] .animate-on-scroll,
+[data-theme="light"] .animate-on-scroll {
+  transition: all 0.8s ease-out, background-color 0.3s ease-out, color 0.3s ease-out;
+}
+
+/* ===================================
+   Custom Cursor Effects (Optional)
+   =================================== */
+@media (hover: hover) and (pointer: fine) {
+  .btn,
+  .project-link,
+  .social-link,
+  .nav-link {
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    cursor: pointer;
+  }
+}
+
+/* ===================================
+   Animation Delays for Sequential Loading
+   =================================== */
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.delay-600 { animation-delay: 0.6s; }
+.delay-700 { animation-delay: 0.7s; }
+.delay-800 { animation-delay: 0.8s; }
+.delay-900 { animation-delay: 0.9s; }
+.delay-1000 { animation-delay: 1s; }
